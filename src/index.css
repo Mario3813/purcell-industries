@@ -8,3 +8,17 @@
   font-family: "Poppins", sans-serif;
   color-scheme: dark;
 }
+
+/* Ocultar scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE y Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+html {
+  scroll-behavior: smooth;
+}

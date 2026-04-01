@@ -5,118 +5,127 @@ import { ShieldHalf } from "lucide-react";
 import { PlugZap } from "lucide-react";
 import { GlobeLock } from "lucide-react";
 
-import user1 from "../assets/profile-pictures/user1.jpg";
-import user2 from "../assets/profile-pictures/user2.jpg";
-import user3 from "../assets/profile-pictures/user3.jpg";
-import user4 from "../assets/profile-pictures/user4.jpg";
-import user5 from "../assets/profile-pictures/user5.jpg";
-import user6 from "../assets/profile-pictures/user6.jpg";
+
+import ra from "../assets/profile-pictures/ra.png";
+import key from "../assets/profile-pictures/key.png";
+import sie from "../assets/profile-pictures/sie.png";
+import omr from "../assets/profile-pictures/omr.png";
+import sch from "../assets/profile-pictures/sch.png";
+import abb from "../assets/profile-pictures/abb.png";
+import hon from "../assets/profile-pictures/hon.png";
+import tos from "../assets/profile-pictures/tos.png";
+import all from "../assets/profile-pictures/all.png";
+
+
 
 export const navItems = [
-  { label: "Features", href: "#" },
-  { label: "Workflow", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Testimonials", href: "#" },
+  { label: "Soluciones", href: "#Soluciones" },
+  { label: "Servicios", href: "#Servicios" },
+  { label: "Aplicaciones", href: "#Aplicaciones" },
+  { label: "Marcas", href: "#Marcas" },
 ];
 
 export const testimonials = [
+  
   {
-    user: "John Doe",
-    company: "Stellar Solutions",
-    image: user1,
-    text: "I am extremely satisfied with the services provided. The team was responsive, professional, and delivered results beyond my expectations.",
+    image: ra,
   },
+  
   {
-    user: "Jane Smith",
-    company: "Blue Horizon Technologies",
-    image: user2,
-    text: "I couldn't be happier with the outcome of our project. The team's creativity and problem-solving skills were instrumental in bringing our vision to life",
-  },
-  {
-    user: "David Johnson",
-    company: "Quantum Innovations",
-    image: user3,
-    text: "Working with this company was a pleasure. Their attention to detail and commitment to excellence are commendable. I would highly recommend them to anyone looking for top-notch service.",
-  },
-  {
-    user: "Ronee Brown",
-    company: "Fusion Dynamics",
-    image: user4,
-    text: "Working with the team at XYZ Company was a game-changer for our project. Their attention to detail and innovative solutions helped us achieve our goals faster than we thought possible. We are grateful for their expertise and professionalism!",
-  },
-  {
-    user: "Michael Wilson",
-    company: "Visionary Creations",
-    image: user5,
-    text: "I am amazed by the level of professionalism and dedication shown by the team. They were able to exceed our expectations and deliver outstanding results.",
-  },
-  {
-    user: "Emily Davis",
-    company: "Synergy Systems",
-    image: user6,
-    text: "The team went above and beyond to ensure our project was a success. Their expertise and dedication are unmatched. I look forward to working with them again in the future.",
-  },
+    image: key,
+   },
+  
+   {
+    image: sie,
+    },
+  
+    {
+    image: omr,
+    },
+ 
+    {
+    image: sch,
+    },
+  
+    {
+    image: abb,
+    },
+
+    {
+    image: hon,
+    },
+
+    {
+    image: tos,
+    },
+    
+       {
+    image: all,
+    },
+     
 ];
 
 export const features = [
   {
     icon: <BotMessageSquare />,
-    text: "Drag-and-Drop Interface",
+    text: "PLC HMI SCADA",
     description:
-      "Easily design and arrange your VR environments with a user-friendly drag-and-drop interface.",
+      "Implementación de sistemas de control y supervisión industrial que optimizan procesos y garantizan operación eficiente en tiempo real.",
   },
   {
     icon: <Fingerprint />,
-    text: "Multi-Platform Compatibility",
+    text: "Integracion y automatizacion",
     description:
-      "Build VR applications that run seamlessly across multiple platforms, including mobile, desktop, and VR headsets.",
+      "Conectamos tecnología y procesos para transformar operaciones en entornos más inteligentes y competitivos.",
   },
   {
     icon: <ShieldHalf />,
-    text: "Built-in Templates",
+    text: "Robotica industrial",
     description:
-      "Jumpstart your VR projects with a variety of built-in templates for different types of applications and environments.",
+      "Soluciones de robótica avanzada diseñadas para maximizar eficiencia, precisión y competitividad industrial.",
   },
   {
     icon: <BatteryCharging />,
-    text: "Real-Time Preview",
+    text: "Sistemas de vision artificial",
     description:
-      "Preview your VR application in real-time as you make changes, allowing for quick iterations and adjustments.",
+      "Soluciones de visión inteligente que garantizan precisión, eficiencia y estándares superiores de calidad industrial.",
   },
   {
     icon: <PlugZap />,
-    text: "Collaboration Tools",
+    text: "Optimizacion de eficiencia",
     description:
-      "Work together with your team in real-time on VR projects, enabling seamless collaboration and idea sharing.",
+      "Implementación y monitoreo de indicadores OEE para identificar pérdidas, optimizar procesos y mejorar la eficiencia industrial.",
   },
   {
     icon: <GlobeLock />,
-    text: "Analytics Dashboard",
+    text: "Fabricacion de maquinas",
     description:
-      "Gain valuable insights into user interactions and behavior within your VR applications with an integrated analytics dashboard.",
+      "Transformamos ideas en maquinaria funcional. Diseñamos y fabricamos equipos industriales a medida.",
   },
+
+    
 ];
 
 export const checklistItems = [
   {
-    title: "Code merge made easy",
+    title: "Mayor eficiencia operativa",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Automatiza tareas repetitivas y reduce tiempos de producción. Los sistemas automatizados trabajan 24/7 con máxima precisión, aumentando el rendimiento general de la planta.",
   },
   {
-    title: "Review code without worry",
+    title: "Reduccion de costos",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Disminuye errores humanos, desperdicios y tiempos muertos. La automatización optimiza el uso de recursos y mejora el control de inventarios y procesos.",
   },
   {
-    title: "AI Assistance to reduce time",
+    title: "Calidad y precision",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Los procesos automatizados garantizan resultados uniformes, minimizando fallas y asegurando estándares de calidad más altos en cada ciclo de producción.",
   },
   {
-    title: "Share work in minutes",
+    title: "Mayor seguridad industrial",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Reduce la exposición del personal a tareas peligrosas o ambientes de riesgo, mejorando las condiciones laborales y disminuyendo accidentes.",
   },
 ];
 
@@ -176,3 +185,20 @@ export const communityLinks = [
   { href: "#", text: "Hackathons" },
   { href: "#", text: "Jobs" },
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
