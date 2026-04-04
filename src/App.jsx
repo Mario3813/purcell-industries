@@ -7,7 +7,7 @@ import Pricing from "./components/Pricing";
 import Testimonials from "./components/Testimonials";
 import Consulting from "./components/consulting";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ScrollToTop from "../../scrollTop";
+import ScrollToTop from "../scrollTop";
 
 // Home limpio
 const Home = () => {
