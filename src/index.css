@@ -9,16 +9,22 @@
   color-scheme: dark;
 }
 
+/* Scroll más suave pero más rápido */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mejor control del scroll en móviles */
+body {
+  overflow-x: hidden;
+}
+
 /* Ocultar scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE y Edge */
-  scrollbar-width: none;     /* Firefox */
-}
-
-html {
-  scroll-behavior: smooth;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
 }

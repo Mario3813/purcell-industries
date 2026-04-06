@@ -54,7 +54,7 @@ const HeroSection = () => {
   
 
 
-<HashLink smooth to="/#Servicios"  className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 sm:py-3 px-4 sm:px-6 rounded-md text-sm sm:text-base whitespace-nowrap 
+<HashLink smooth to="#servicios"  className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 sm:py-3 px-4 sm:px-6 rounded-md text-sm sm:text-base whitespace-nowrap 
                hover:from-orange-600 hover:to-orange-900 
                transition-all duration-300 ease-in-out transform hover:scale-105"  >
 
@@ -69,7 +69,7 @@ const HeroSection = () => {
 
 
 
-<HashLink smooth to="/#Marcas"  className="py-2 sm:py-3 px-4 sm:px-6 rounded-md border border-white text-sm sm:text-base whitespace-nowrap 
+<HashLink smooth to="#marcas"  className="py-2 sm:py-3 px-4 sm:px-6 rounded-md border border-white text-sm sm:text-base whitespace-nowrap 
                hover:bg-white hover:text-black 
                transition-all duration-300 ease-in-out transform hover:scale-105 scroll-smooth"  >
 

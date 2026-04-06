@@ -2,7 +2,7 @@ import { features } from "../constants";
 
 const FeatureSection = () => {
   return (
-    <div id="Servicios"  className=  "relative mt-[100px] min-h-[700px] overflow-hidden bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 border-t border-neutral-800 rounded-3xl">
+    <div id="servicios"  className=  "relative mt-[100px] min-h-[700px] overflow-hidden bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 border-t border-neutral-800 rounded-3xl">
       {/* Glow superior */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-orange-500/10 blur-[120px] rounded-full

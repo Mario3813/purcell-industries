@@ -17,12 +17,11 @@ import tos from "../assets/profile-pictures/tos.png";
 import all from "../assets/profile-pictures/all.png";
 
 
-
 export const navItems = [
-  { label: "Soluciones", href: "#Soluciones" },
-  { label: "Servicios", href: "#Servicios" },
-  { label: "Aplicaciones", href: "#Aplicaciones" },
-  { label: "Marcas", href: "#Marcas" },
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Beneficios", href: "#beneficios" },
+  { label: "Marcas", href: "#marcas" },
 ];
 
 export const testimonials = [
