@@ -37,7 +37,7 @@ const HeroSection = () => {
   <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center px-4 sm:px-6 text-white">
     
     <h1 className="text-3xl sm:text-5xl lg:text-7xl tracking-wide leading-snug sm:leading-tight">
-      Automatiza optimiza crece
+      Automatiza, optimiza y crece
     </h1>
 
     <span className="block text-2xl sm:text-4xl lg:text-7xl mt-2 bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
