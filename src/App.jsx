@@ -9,15 +9,18 @@ import Consulting from "./components/consulting";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "../scrollTop";
 
-// Home limpio
 const Home = () => {
   return (
     <>
       <HeroSection />
-      <FeatureSection />
-      <Workflow />
-      <Pricing />
-      <Testimonials />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <FeatureSection />
+        <Workflow />
+        <Pricing />
+        <Testimonials />
+      </div>
+
       <Footer />
     </>
   );
@@ -26,16 +29,23 @@ const Home = () => {
 const App = () => {
   return (
     <BrowserRouter>
-          <ScrollToTop />
+      <ScrollToTop />
+      <Navbar />
 
-      <Navbar /> {/* ✅ GLOBAL */}
-
-      <div className="max-w-7xl mx-auto px-6">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/consulting" element={<Consulting />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/consulting"
+          element={
+            <>
+              <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                <Consulting />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
     </BrowserRouter>
   );
 };

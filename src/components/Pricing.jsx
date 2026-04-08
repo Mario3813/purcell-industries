@@ -7,7 +7,6 @@ import fanuc from "../assets/profile-pictures/fanuc.jpg";
 import farmaceutica from "../assets/profile-pictures/farmaceutica.jpg";
 import lineapa from "../assets/profile-pictures/lineapa.jpg";
 
-
 const images = [
   automatizacion,
   sold,
@@ -16,9 +15,7 @@ const images = [
   fanuc,
   farmaceutica,
   lineapa,
-
 ];
-
 
 const Pricing = () => {
   const scrollRef = useRef(null);
@@ -29,11 +26,10 @@ const Pricing = () => {
     const interval = setInterval(() => {
       if (container) {
         container.scrollBy({
-          left: 300, // cantidad que se mueve
+          left: 300,
           behavior: "smooth",
         });
 
-        // loop infinito
         if (
           container.scrollLeft + container.clientWidth >=
           container.scrollWidth - 10
@@ -41,38 +37,35 @@ const Pricing = () => {
           container.scrollTo({ left: 0, behavior: "smooth" });
         }
       }
-    }, 2000); // velocidad
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div id="beneficios" className="mt-20">
-     
-           {/* <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide">
-        Nuestro proceso de trabajo
-      </h2> */}
+    <div id="beneficios" className="mt-20 px-4 max-w-7xl mx-auto overflow-hidden">
 
-      {/* 🔥 CARRUSEL */}
+      {/* CARRUSEL */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto gap-4 px-4 scroll-smooth no-scrollbar"
+        className="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar"
       >
         {images.map((img, index) => (
           <div
             key={index}
-            className="min-w-[300px] sm:min-w-[50%] lg:min-w-[33.33%]"
+            className="min-w-[280px] sm:min-w-[50%] lg:min-w-[33.33%] flex-shrink-0"
           >
-            <div className="w-full h-[500px] rounded-xl overflow-hidden border border-neutral-700">
-              <img
-                src={img}
-                alt={`img-${index}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
+           <div className="w-[350px] sm:w-[400px] lg:w-[400px] h-[300px] sm:h-[400px] lg:h-[500px] rounded-xl overflow-hidden border border-neutral-700">
+  <img
+    src={img}
+    alt="service"
+    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/10"
+  />
+</div>
           </div>
         ))}
       </div>
+
     </div>
   );
 };

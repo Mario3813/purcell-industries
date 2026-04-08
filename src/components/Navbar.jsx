@@ -11,14 +11,13 @@ const Navbar = () => {
   const location = useLocation();
 
   const toggleNavbar = () => {
-    setMobileDrawerOpen(!mobileDrawerOpen);
+    setMobileDrawerOpen((prev) => !prev);
   };
 
   const closeMenu = () => {
     setMobileDrawerOpen(false);
   };
 
-  // 🔥 Detectar scroll navbar
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -33,19 +32,32 @@ const Navbar = () => {
         }
       });
 
-      setActive(current);
+      if (location.pathname === "/") {
+        setActive(current || "/");
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // 🔥 Detectar ruta activa
-  useEffect(() => {
-    setActive(location.pathname);
   }, [location.pathname]);
 
-  // 🔥 Render inteligente de links
+  useEffect(() => {
+    setActive(location.pathname);
+    closeMenu();
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (mobileDrawerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileDrawerOpen]);
+
   const renderLink = (item, isMobile = false) => {
     const isActive = active === item.href;
 
@@ -67,104 +79,98 @@ const Navbar = () => {
       ${underline}
     `;
 
-    // 👉 Si es ancla (#)
     if (item.href.startsWith("#")) {
       return (
-        <a
-          href={item.href}
-          onClick={closeMenu}
-          className={commonClasses}
-        >
+        <a href={item.href} onClick={closeMenu} className={commonClasses}>
           {item.label}
         </a>
       );
     }
 
-    // 👉 Si es ruta
     return (
-      <Link
-        to={item.href}
-        onClick={closeMenu}
-        className={commonClasses}
-      >
+      <Link to={item.href} onClick={closeMenu} className={commonClasses}>
         {item.label}
       </Link>
     );
   };
 
   return (
-    <nav
-      className={`sticky top-0 z-50 py-3 transition-all duration-300
-      ${
-        scrolled
-          ? "bg-neutral-900/80 backdrop-blur-xl shadow-lg border-b border-neutral-700/50"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-0">
-
-        <div className="flex justify-between items-center">
-
-          {/* LOGO */}
-          <Link
-            to="/"
-            onClick={() => {
-              closeMenu();
-              window.scrollTo(0, 0);
-            }}
-          >
-            <img className="h-8 sm:h-10" src={logopi} alt="logo" />
-          </Link>
-
-          {/* DESKTOP */}
-          <ul className="hidden lg:flex ml-14 space-x-12">
-            {navItems.map((item, i) => (
-              <li key={i}>{renderLink(item)}</li>
-            ))}
-          </ul>
-
-          {/* CTA */}
-          <div className="hidden lg:flex space-x-6 items-center">
-            <a
-              href="#proyectos"
-              className="py-2 px-3 border rounded-md hover:bg-white hover:text-black transition"
-            >
-              Ver proyectos
-            </a>
-
+    <>
+      <nav
+        className={`sticky top-0 z-50 py-3 transition-all duration-300 ${
+          scrolled
+            ? "bg-neutral-900/80 backdrop-blur-xl shadow-lg border-b border-neutral-700/50"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between min-w-0">
             <Link
-              to="/consulting"
-              className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md hover:scale-105 transition"
+              to="/"
+              onClick={() => {
+                closeMenu();
+                window.scrollTo(0, 0);
+              }}
+              className="shrink-0"
             >
-              Consultoría
+              <img className="h-8 sm:h-10 w-auto max-w-full" src={logopi} alt="logo" />
             </Link>
-          </div>
 
-          {/* MOBILE BUTTON */}
-          <div className="lg:hidden">
-            <button onClick={toggleNavbar}>
-              <Menu />
-            </button>
+            <ul className="hidden lg:flex ml-14 space-x-12">
+              {navItems.map((item, i) => (
+                <li key={i}>{renderLink(item)}</li>
+              ))}
+            </ul>
+
+            <div className="hidden lg:flex space-x-6 items-center shrink-0">
+              <a
+                href="#proyectos"
+                className="py-2 px-3 border rounded-md hover:bg-white hover:text-black transition"
+              >
+                Ver proyectos
+              </a>
+
+              <Link
+                to="/consulting"
+                className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md hover:scale-105 transition"
+              >
+                Consultoría
+              </Link>
+            </div>
+
+            <div className="lg:hidden shrink-0">
+              <button onClick={toggleNavbar} aria-label="Abrir menú">
+                <Menu />
+              </button>
+            </div>
           </div>
         </div>
+      </nav>
 
-        {/* MOBILE MENU */}
+      <div
+        className={`fixed inset-0 z-[60] lg:hidden transition-opacity duration-300 ${
+          mobileDrawerOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
         <div
-          className={`fixed top-0 right-0 w-full h-screen bg-neutral-900 z-20 flex flex-col lg:hidden
-          transition-all duration-300
-          ${
-            mobileDrawerOpen
-              ? "translate-x-0 opacity-100"
-              : "translate-x-full opacity-0 pointer-events-none"
+          className="absolute inset-0 bg-black/50"
+          onClick={closeMenu}
+        ></div>
+
+        <div
+          className={`absolute inset-y-0 right-0 w-[80%] max-w-[320px] bg-neutral-900 flex flex-col transition-transform duration-300 ${
+            mobileDrawerOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="absolute top-5 right-5">
-            <button onClick={closeMenu}>
+          <div className="flex justify-end p-5">
+            <button onClick={closeMenu} aria-label="Cerrar menú">
               <X size={28} />
             </button>
           </div>
 
-          <div className="flex flex-col justify-center items-center h-full">
+          <div className="flex flex-col justify-center items-center flex-1 px-6">
             <ul className="space-y-6 text-center">
               {navItems.map((item, i) => (
                 <li key={i}>{renderLink(item, true)}</li>
@@ -172,9 +178,8 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-
       </div>
-    </nav>
+    </>
   );
 };
 
