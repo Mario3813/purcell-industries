@@ -1,5 +1,4 @@
 import { useState } from "react";
-import video1 from "../public/video1.mp4";
 import { serviceImages } from "../constants/images";
 import { HashLink } from "react-router-hash-link";
 
@@ -11,8 +10,8 @@ const HeroSection = () => {
       {/* HERO FULL WIDTH */}
       <div className="relative w-full min-h-screen overflow-hidden">
         <video
-          src={video1}
-          autoPlay
+          src="/video1.mp4"
+           autoPlay
           loop
           muted
           playsInline
