@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://purcell-industries.vercel.app/sitemap.xml
