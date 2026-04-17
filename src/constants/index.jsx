@@ -5,7 +5,6 @@ import { ShieldHalf } from "lucide-react";
 import { PlugZap } from "lucide-react";
 import { GlobeLock } from "lucide-react";
 
-
 import ra from "../assets/profile-pictures/ra.png";
 import key from "../assets/profile-pictures/key.png";
 import sie from "../assets/profile-pictures/sie.png";
@@ -16,7 +15,6 @@ import hon from "../assets/profile-pictures/hon.png";
 import tos from "../assets/profile-pictures/tos.png";
 import all from "../assets/profile-pictures/all.png";
 
-
 export const navItems = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: "#servicios" },
@@ -25,43 +23,42 @@ export const navItems = [
 ];
 
 export const testimonials = [
-  
   {
     image: ra,
   },
-  
+
   {
     image: key,
-   },
-  
-   {
+  },
+
+  {
     image: sie,
-    },
-  
-    {
+  },
+
+  {
     image: omr,
-    },
- 
-    {
+  },
+
+  {
     image: sch,
-    },
-  
-    {
+  },
+
+  {
     image: abb,
-    },
+  },
 
-    {
+  {
     image: hon,
-    },
+  },
 
-    {
+  {
     image: tos,
-    },
-    
-       {
+  },
+
+  {
     image: all,
-    },
-     
+  },
+ 
 ];
 
 export const features = [
@@ -101,8 +98,6 @@ export const features = [
     description:
       "Transformamos ideas en maquinaria funcional. Diseñamos y fabricamos equipos industriales a medida.",
   },
-
-    
 ];
 
 export const checklistItems = [
@@ -184,20 +179,3 @@ export const communityLinks = [
   { href: "#", text: "Hackathons" },
   { href: "#", text: "Jobs" },
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
