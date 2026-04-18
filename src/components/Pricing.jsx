@@ -22,50 +22,47 @@ const Pricing = () => {
 
   useEffect(() => {
     const container = scrollRef.current;
+    if (!container) return;
 
-    const interval = setInterval(() => {
-      if (container) {
-        container.scrollBy({
-          left: 300,
-          behavior: "smooth",
-        });
+    const scrollSpeed = 1; // velocidad (sube para más rápido)
 
-        if (
-          container.scrollLeft + container.clientWidth >=
-          container.scrollWidth - 10
-        ) {
-          container.scrollTo({ left: 0, behavior: "smooth" });
-        }
+    const scrollLoop = () => {
+      if (!container) return;
+
+      container.scrollLeft += scrollSpeed;
+
+      // cuando llega a la mitad (porque duplicamos imágenes)
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0;
       }
-    }, 2000);
 
-    return () => clearInterval(interval);
+      requestAnimationFrame(scrollLoop);
+    };
+
+    requestAnimationFrame(scrollLoop);
   }, []);
 
   return (
     <div id="beneficios" className="mt-20 px-4 max-w-7xl mx-auto overflow-hidden">
-
-      {/* CARRUSEL */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar"
+        className="flex overflow-x-hidden gap-4 whitespace-nowrap"
       >
-        {images.map((img, index) => (
+        {[...images, ...images].map((img, index) => (
           <div
             key={index}
             className="min-w-[280px] sm:min-w-[50%] lg:min-w-[33.33%] flex-shrink-0"
           >
-           <div className="w-[350px] sm:w-[400px] lg:w-[400px] h-[300px] sm:h-[400px] lg:h-[500px] rounded-xl overflow-hidden border border-neutral-700">
-  <img
-    src={img}
-    alt="service"
-    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/10"
-  />
-</div>
+            <div className="w-[350px] sm:w-[400px] lg:w-[400px] h-[300px] sm:h-[400px] lg:h-[500px] rounded-xl overflow-hidden border border-neutral-700">
+              <img
+                src={img}
+                alt="service"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/10"
+              />
+            </div>
           </div>
         ))}
       </div>
-
     </div>
   );
 };
